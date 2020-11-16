@@ -1,0 +1,35 @@
+<div class="col-12">
+    <div class="row">
+        <div class="col-12">
+            <h3>Agenda Telefónica</h3>
+        </div>
+        <div class="col-12">
+            <div class="row">
+                <div class="col-6 m-t-15">
+                    <mat-form-field class="full-width">
+                        <mat-label>Número de teléfono</mat-label>
+                        <input matInput name="number" pattern="^([8]{1}[0-9]{2}\\) [0-9]{3}\\-[0-9]{4}\d+" 
+                            [(ngModel)]="contact.number" placeholder="">
+                    </mat-form-field>
+                </div>
+                <div class="col-6">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Toppings</mat-label>
+                        <mat-select name="type" [(ngModel)]="contact.type" multiple>
+                            <mat-option *ngFor="let phone_type of phone_types" [value]="phone_type">{{phone_type}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-12">
+                    <mat-checkbox [(ngModel)]="contact.default"> Es Principal </mat-checkbox>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <button mat-raised-button (click)="do_add_contact()">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
