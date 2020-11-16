@@ -12,7 +12,7 @@
             <tr *ngFor="let contact of person.contacts; let i = index">
                 <td>{{contact.type}}</td>
                 <td>{{contact.number}}</td>
-                <td>{{contact.type? 'Si': 'No'}}</td>
+                <td>{{contact.default? 'Si': 'No'}}</td>
                 <td><a (click)="delete(i)">delete</a></td>
             </tr>
         </tbody>
